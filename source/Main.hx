@@ -63,13 +63,15 @@ class Main extends Sprite
 			gameHeight = Math.ceil(stageHeight / zoom);
 		}
 
-		#if !debug
+		#if desktop
+		initialState = Caching;
+		#elseif android
 		initialState = TitleState;
 		#end
 
-		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
+		addChild(new FlxGame(gameWidth, gameHeight, initialState, #if (flixel < "5.0.0") zoom, #end framerate, framerate, skipSplash, startFullscreen));
 
-		#if !mobile
+		#if !windows
 		addChild(new FPS(10, 3, 0xFFFFFF));
 		#end
 	}

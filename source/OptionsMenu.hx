@@ -58,6 +58,10 @@ class OptionsMenu extends MusicBeatState
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
+		
+		#if mobile
+		addVirtualPad(LEFT_FULL, A_B_C);
+		#end
 
 		super.create();
 	}
@@ -72,6 +76,13 @@ class OptionsMenu extends MusicBeatState
 				changeSelection(-1);
 			if (controls.DOWN_P)
 				changeSelection(1);
+				
+			#if mobile
+			if (virtualPad.buttonC.justPressed) {
+			  removeVirtualPad();
+			  openSubState(new mobile.MobileControlsSubState());
+			}
+			#end
 
 			if (controls.RIGHT_R)
 			{

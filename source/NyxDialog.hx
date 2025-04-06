@@ -55,8 +55,16 @@ class NyxDialog extends FlxSpriteGroup
       trace("Started Dialog!!");
       return;
 		}
+		
+		#if mobile
+        var jusTouched:Bool = false;
 
-		if (FlxG.keys.justPressed.SPACE)
+        for (touch in FlxG.touches.list)
+          if (touch.justPressed)
+            jusTouched = true;
+        #end
+
+		if (FlxG.keys.justPressed.SPACE #if mobile || jusTouched #end)
 		{
         cleanDialog();
 		}

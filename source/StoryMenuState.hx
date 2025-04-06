@@ -300,6 +300,9 @@ class StoryMenuState extends MusicBeatState
 		nyxDiff.members[1].alpha = 1;
 		nyxDiff.members[2].alpha = 0;
 
+		#if mobile
+        addVirtualPad(LEFT_FULL, A_B);
+        #end
 
 		super.create();
 		changeDifficulty();

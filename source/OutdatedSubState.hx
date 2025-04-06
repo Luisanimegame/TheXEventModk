@@ -31,11 +31,20 @@ class OutdatedSubState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
-		if (controls.ACCEPT)
+		if (controls.ACCEPT #if android || FlxG.android.justReleased.BACK #end)
 		{
 			FlxG.openURL("https://github.com/KadeDev/Kade-Engine/releases/latest");
 		}
-		if (controls.BACK)
+		
+		#if mobile
+        var jusTouched:Bool = false;
+
+        for (touch in FlxG.touches.list)
+          if (touch.justPressed)
+            jusTouched = true;
+        #end
+		
+		if (controls.BACK #if mobile || jusTouched #end)
 		{
 			leftState = true;
 			FlxG.switchState(new MainMenuState());

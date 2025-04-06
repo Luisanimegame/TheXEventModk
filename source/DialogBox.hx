@@ -78,7 +78,7 @@ class DialogBox extends FlxSpriteGroup
     override function update(elapsed:Float)
   	{
         super.update(elapsed);
-        if (FlxG.keys.anyJustPressed([SPACE])) SkipDialog();
+        if (FlxG.keys.anyJustPressed([SPACE]) #if android || FlxG.android.justReleased.BACK #end) SkipDialog();
     }
 
     public function SetTextColor(col:FlxColor){

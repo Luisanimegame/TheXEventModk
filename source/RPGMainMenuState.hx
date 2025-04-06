@@ -184,5 +184,9 @@ class RPGMainMenuState extends RPGState
       currentLevel.y += -720 - 16;
       currentLevel.x += 16;
       levelCollision.add(currentLevel);
+      
+      #if mobile
+      addVirtualPad(LEFT_FULL, A_B);
+      #end
   }
 }

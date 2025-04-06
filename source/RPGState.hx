@@ -216,6 +216,10 @@ class RPGState extends MusicBeatState
       currentLevel = LoadLevelCollision(StringTools.replace(Paths.image('xeventbg/xevent', 'shared'), ".png",".csv"),Paths.image('xeventbg/tiles16', 'shared'), 0, 0);
       cachedLevel = LoadLevelCollision(StringTools.replace(Paths.image('xeventbg/xevent_gaster', 'shared'), ".png",".csv"),Paths.image('xeventbg/tiles16', 'shared'), 0, 0);
       levelCollision.add(currentLevel);
+      
+      #if mobile
+      addVirtualPad(LEFT_FULL, A_B_C);
+      #end
   }
 
   //Generic collision cycle
