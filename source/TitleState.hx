@@ -426,7 +426,7 @@ class TitleState extends MusicBeatState
 			new FlxTimer().start(2, function(tmr:FlxTimer)
 			{
 					if (FlxG.save.data.firstRun == true){
-							FlxG.switchState(new LatencyState());
+							FlxG.switchState(new RPGMainMenuState());
 					}
 					else{
 							FlxG.switchState(new RPGMainMenuState());
