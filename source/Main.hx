@@ -63,9 +63,7 @@ class Main extends Sprite
 			gameHeight = Math.ceil(stageHeight / zoom);
 		}
 
-		#if desktop
-		initialState = Caching;
-		#elseif android
+		#if !debug
 		initialState = TitleState;
 		#end
 
