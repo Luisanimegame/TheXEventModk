@@ -28,7 +28,7 @@ class OptionsMenu extends MusicBeatState
 		controlsStrings = CoolUtil.coolStringFile(    (FlxG.save.data.dfjk ? 'DFJK' : 'WASD') + "\n"
 																								+ (FlxG.save.data.newInput ? "New input" : "Old Input") + "\n"
 																								+ (FlxG.save.data.downscroll ? 'Downscroll' : 'Upscroll') + "\n"
-																								+ "Accuracy " + (!FlxG.save.data.accuracyDisplay ? "off" : "on") + "\n"
+																								+ "Accuracy " + (!FlxG.save.data.accuracyDisplay ? "off" : "on") + "\n");
 
 		trace(controlsStrings);
 
