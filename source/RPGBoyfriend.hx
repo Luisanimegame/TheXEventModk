@@ -6,6 +6,8 @@ import flixel.animation.FlxBaseAnimation;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.math.FlxMath;
 import flixel.text.FlxText;
+import Controls;
+import Controls.KeyboardScheme;
 
 using StringTools;
 
