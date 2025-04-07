@@ -29,8 +29,6 @@ class OptionsMenu extends MusicBeatState
 																								+ (FlxG.save.data.newInput ? "New input" : "Old Input") + "\n"
 																								+ (FlxG.save.data.downscroll ? 'Downscroll' : 'Upscroll') + "\n"
 																								+ "Accuracy " + (!FlxG.save.data.accuracyDisplay ? "off" : "on") + "\n"
-																								+ "Load replays" + "\n"
-																								+ "Audio Offset Calibration");
 
 		trace(controlsStrings);
 
@@ -71,7 +69,7 @@ class OptionsMenu extends MusicBeatState
 		super.update(elapsed);
 
 			if (controls.BACK)
-				FlxG.switchState(new RPGMainMenuState());
+				FlxG.switchState(new MainMenuState());
 			if (controls.UP_P)
 				changeSelection(-1);
 			if (controls.DOWN_P)
@@ -132,11 +130,6 @@ class OptionsMenu extends MusicBeatState
 						ctrl.isMenuItem = true;
 						ctrl.targetY = curSelected - 3;
 						grpControls.add(ctrl);
-					case 4:
-						trace('switch');
-						FlxG.switchState(new LoadReplayState());
-					case 5:
-						FlxG.switchState(new LatencyState());
 				}
 			}
 		FlxG.save.flush();
