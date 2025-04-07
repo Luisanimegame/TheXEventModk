@@ -7,7 +7,6 @@ import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.math.FlxMath;
 import flixel.text.FlxText;
 import Controls;
-import Controls.KeyboardScheme;
 
 using StringTools;
 
@@ -24,15 +23,9 @@ class RPGBoyfriend extends FlxSprite
     public var currentState:String = "movement";
     var currentAnimation:String = "down";
     var charSpeed:Float = 40000;
-
-    var up:Bool;
-    var down:Bool;
-    var left:Bool;
-    var right:Bool;
     var stickX:Float;
     var stickY:Float;
-    var space:Bool;
-
+    
     var isMoving:Bool = false;
 
     var lastElapsed:Float = 0;
@@ -42,11 +35,13 @@ class RPGBoyfriend extends FlxSprite
       FlxG.watch.addQuick("Deltatime",lastElapsed);
       FlxG.watch.addQuick("X Speed",velocity.x);
       //Input polling
-      up = controls.UP_P;
-      down = controls.DOWN_P;
-      left = controls.LEFT_P;
-      right = controls.RIGHT_P;
-      space = controls.ACCEPT;
+      var up = controls.UP_P;
+	  var down = controls.DOWN_P;
+	  var left = controls.LEFT_P;
+      var right = controls.RIGHT_P;
+	  var space = controls.ACCEPT;
+
+
 
       //State machine
       switch (currentState){
