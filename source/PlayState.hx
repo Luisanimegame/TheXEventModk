@@ -2151,13 +2151,6 @@ class PlayState extends MusicBeatState
 				PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + difficulty, PlayState.storyPlaylist[0]);
 				FlxG.sound.music.stop();
 
-				if (SONG.song.toLowerCase() == "relighted"){
-						var aux = new RPGState();
-						aux.InitRPGState("relighted");
-						FlxG.switchState(aux);
-						return;
-				}
-
 				LoadingState.loadAndSwitchState(new PlayState());
 			}
 		}
