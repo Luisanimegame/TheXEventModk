@@ -35,11 +35,6 @@ class RPGBoyfriend extends FlxSprite
       FlxG.watch.addQuick("Deltatime",lastElapsed);
       FlxG.watch.addQuick("X Speed",velocity.x);
       //Input polling
-      var up = controls.UP_P;
-	  var down = controls.DOWN_P;
-	  var left = controls.LEFT_P;
-      var right = controls.RIGHT_P;
-	  var space = controls.ACCEPT;
 
 
 
@@ -51,6 +46,12 @@ class RPGBoyfriend extends FlxSprite
       //Update Graphics
       UpdateAnimation();
       super.update(elapsed);
+
+      var up = controls.UP_P;
+	  var down = controls.DOWN_P;
+	  var left = controls.LEFT_P;
+      var right = controls.RIGHT_P;
+	  var space = controls.ACCEPT;
   	}
 
     function MovementState(){
